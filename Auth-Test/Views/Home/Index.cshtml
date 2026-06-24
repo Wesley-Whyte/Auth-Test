@@ -5,6 +5,9 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to My house</h1>
-    <h1>@Model.content</h1>
+    <p>Message from the local environment variable: @Model.EnvironVariable</p>
+    <p>Message from the app config variable: @Model.AppConfigVariable</p>
+    <p>Message from the key vault variable: @Model.KeyVaultVariable</p>
+    <p>Message from the key vault variable gotten through app config: @Model.KeyVaultThroughAppConfig</p>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

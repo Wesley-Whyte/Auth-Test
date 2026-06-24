@@ -13,7 +13,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        HomeViewModel ViewModel = new HomeViewModel() { content = _configuration["Env:Variable"] };
+        HomeViewModel ViewModel = new HomeViewModel()
+        {
+            EnvironVariable = _configuration["Env:Variable"],
+            AppConfigVariable = _configuration["AppConfig:Variable"],
+            KeyVaultVariable = _configuration["KeyVault:Variable"],
+            KeyVaultThroughAppConfig = _configuration["KeyVault:ThroughAppConfig"]
+        };
         return View(ViewModel);
     }
 
