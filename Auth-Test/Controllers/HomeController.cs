@@ -18,7 +18,9 @@ public class HomeController : Controller
             EnvironVariable = _configuration["Env:Variable"],
             AppConfigVariable = _configuration["AppConfig:Variable"],
             KeyVaultVariable = _configuration["KeyVault:Variable"],
-            KeyVaultThroughAppConfig = _configuration["KeyVault:ThroughAppConfig"]
+            KeyVaultVariableAppConfig = _configuration["KeyVault:Variable:AppConfig"],
+            KeyVaultSecret = _configuration["KeyVault:Secret"],
+            KeyVaultSecretAppConfig = _configuration["KeyVault:Secret:AppConfig"]
         };
         return View(ViewModel);
     }
