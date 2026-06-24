@@ -6,9 +6,15 @@ namespace Auth_Test.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly IConfiguration _configuration;
+
+    public HomeController(IConfiguration configuration)
+        => _configuration = configuration;
+
     public IActionResult Index()
     {
-        return View();
+        HomeViewModel ViewModel = new HomeViewModel() { content = _configuration["Env:Variable"] };
+        return View(ViewModel);
     }
 
     public IActionResult Privacy()
